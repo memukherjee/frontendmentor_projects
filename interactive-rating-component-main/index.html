@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+
+        <title>Frontend Mentor | Interactive rating component</title>
+
+        <link rel="stylesheet" href="reset-styles.css" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <main class="container">
+            <form class="box">
+                <span class="star">
+                    <img src="./images/icon-star.svg" alt="star" />
+                </span>
+                <h1>How did we do?</h1>
+                <p>
+                    Please let us know how we did with your support request. All
+                    feedback is appreciated to help us improve our offering!
+                </p>
+                <div class="rating">
+                    <div class="radio-btn">
+                        <input type="radio" name="rating" value="1" id="rating-1" />
+                        <label for="rating-1"> 1 </label>
+                    </div>
+                    <div class="radio-btn">
+                        <input type="radio" name="rating" value="2" id="rating-2" />
+                        <label for="rating-2"> 2 </label>
+                    </div>
+                    <div class="radio-btn">
+                        <input type="radio" name="rating" value="3" id="rating-3" />
+                        <label for="rating-3"> 3 </label>
+                    </div>
+                    <div class="radio-btn">
+                        <input type="radio" name="rating" value="4" id="rating-4" />
+                        <label for="rating-4"> 4 </label>
+                    </div>
+                    <div class="radio-btn">
+                        <input type="radio" name="rating" value="5" id="rating-5" />
+                        <label for="rating-5"> 5 </label>
+                    </div>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+
+            <div class="box thank-you invisible">
+                <img
+                class="thank-you-img"
+                    src="./images/illustration-thank-you.svg"
+                    alt="Thank you"
+                />
+                <span>
+                    You selected <span id="selected-rating">4</span> out of 5
+                </span>
+                <h1>Thank you!</h1>
+                <p>
+                    We appreciate you taking the time to give arating. If you
+                    ever need more support, don’t hesitate to get in touch!
+                </p>
+            </div>
+        </main>
+        <footer class="attribution">
+            Challenge by
+            <a
+                href="https://www.frontendmentor.io?ref=challenge"
+                target="_blank"
+                >Frontend Mentor</a
+            >. Coded by
+            <a href="https://memukherjee.netlify.app/">Akash Mukherjee</a>.
+        </footer>
+    </body>
+</html>

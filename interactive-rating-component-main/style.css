@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root{
+    --bg-opacity: 1;
+    --primary-color: hsl(25, 97%, 53%);
+    --white: hsl(0, 0%, 100%);
+    --light-grey: hsl(217, 12%, 63%);
+    --medium-grey: hsl(216, 12%, 54%);
+    --medium-grey-mild: hsla(216, 12%, 54%,0.2);
+    --dark-blue: hsl(213, 19%, 18%);
+    --very-dark-blue: hsl(216, 12%, 8%);
+    --paragraph-font: 400 15px/1.5 "Overpass", sans-serif;
+    --heading-font: 700 1.5rem/1.5 "Overpass", sans-serif;
+    --btn-font: 400 1rem "Overpass", sans-serif;
+    --footer-font: 400 0.75rem/1.5 "Overpass", sans-serif;
+}
+
+body {
+    background-color: var(--very-dark-blue);
+    color: var(--white);
+    font: var(--paragraph-font);
+    min-height: 100dvh, 100vh;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    width: calc(100% - 2rem);
+    max-width: 420px;
+    margin: auto;
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    background-color: var(--dark-blue);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.star{
+    cursor: pointer;
+    background-color: var(--medium-grey-mild);
+    border-radius: 1000px;
+    padding: .75rem;
+    display: inline-block;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.star>img{
+    display: block;
+    width: 1rem;
+    height: 1rem;
+}
+
+.star:hover{
+    background-color: var(--medium-grey);
+}
+
+.box > h1{
+    font: var(--heading-font);
+    color: var(--white);
+    margin: 1.5rem auto .5rem;
+}
+
+.box > p{
+    font: var(--paragraph-font);
+    color: var(--light-grey);
+    margin: 0 auto 1.5rem;
+}
+
+.rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+    margin-bottom: 1.5rem;
+}
+
+.radio-btn {
+    position: relative;
+    background-color: var(--medium-grey-mild);
+    color: var(--light-grey);
+    border-radius: 1000px;
+    overflow: hidden;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.radio-btn>input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.radio-btn>label {
+    --size: 3rem;
+    width: var(--size);
+    height: var(--size);
+    font: var(--btn-font);
+    line-height: 1.75rem;
+    padding: .75rem;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.radio-btn:hover {
+    background-color: var(--medium-grey);
+    color: var(--white);
+}
+
+.radio-btn>input:checked+label {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.box> button {
+    background-color: var(--primary-color);
+    display: block;
+    width: 100%;
+    padding: .75rem 0 .5rem;
+    font: var(--btn-font);
+    color: var(--white);
+    text-transform: uppercase;
+    border-radius: 1000px;
+}
+
+.thank-you {
+    text-align: center;
+}
+.box> button:hover {
+    background-color: var(--white);
+    color: var(--primary-color);
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.box > .thank-you-img {
+    margin: 0 auto 2.5rem;
+    display: block;
+}
+
+.thank-you > span {
+    font: var(--paragraph-font);
+    color: var(--primary-color);
+    background-color: var(--medium-grey-mild);
+    padding: .25rem 1rem;
+    border-radius: 1000px;
+}
+
+.invisible {
+    visibility: hidden;
+    display: none;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.attribution {
+    font: var(--footer-font);
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+
