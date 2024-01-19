@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./qr-code-component-main/images/favicon-32x32.png"
+        />
+        <title>FrontendMentor Projects</title>
+        <style>
+            body {
+                font-family: sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #333;
+                color: #fff;
+            }
+            a {
+                text-decoration: none;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+            h1 {
+                text-align: center;
+            }
+            h1 span, h1 span a {
+                color: #db880d;
+            }
+            .projects {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+            .projects li {
+                margin: 1rem;
+                padding: 1rem;
+                border-radius: 0.5rem;
+                background-color: #444;
+                box-shadow: 0 0 0.5rem #222222;
+                width: 20%;
+            }
+            .projects li:hover {
+                box-shadow: 0 0 1rem #222222;
+                background-color: #555;
+                transition: all 0.2s ease-in-out;
+                transform: scale(1.05);
+            }
+            .projects li img {
+                margin-bottom: 1rem;
+            }
+            .projects li a {
+                color: #b3b3b3;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1>
+                FrontendMentor Projects
+                <span
+                    >by
+                    <a href="https://memukherjee.netlify.app"
+                        >Akash Mukherjee</a
+                    ></span
+                >
+            </h1>
+            <ul class="projects"></ul>
+        </main>
+        <script type="module" src="script.js"></script>
+    </body>
+</html>
