@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,800&display=swap");
+
+:root {
+    --purple: hsl(259, 100%, 65%);
+    --light-red: hsl(0, 100%, 67%);
+    --white: hsl(0, 0%, 100%);
+    --off-white: hsl(0, 0%, 94%);
+    --light-grey: hsl(0, 0%, 86%);
+    --smokey-grey: hsl(0, 1%, 44%);
+    --off-black: hsl(0, 0%, 8%);
+
+    --input-font: 700 2rem "Poppins", sans-serif;
+    --label-font: 700 1rem "Poppins", sans-serif;
+    --error-font: italic 0.8rem "Poppins", sans-serif;
+    --result-font: italic 800 5rem "Poppins", sans-serif;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--off-white);
+    min-height: 100dvh, 100vh;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--white);
+    border-radius: 1rem;
+    border-bottom-right-radius: 7rem;
+    width: calc(100% - 2rem);
+    max-width: 920px;
+    padding: 2.5rem;
+}
+
+.form-inputs {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.form-input label {
+    display: block;
+    margin-bottom: 1rem;
+    font: var(--label-font);
+    color: var(--smokey-grey);
+}
+
+.form-input > label.error {
+    color: var(--light-red);
+}
+
+.form-input > label.error + input {
+    border-color: var(--light-red);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    appearance: none;
+    -moz-appearance: textfield;
+}
+
+.form-input input {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--light-grey);
+    font: var(--input-font);
+    color: var(--off-black);
+    outline: none;
+}
+
+.form-input input:focus {
+    border-color: var(--purple);
+}
+
+.form-input > span {
+    font: var(--error-font);
+    color: var(--light-red);
+    display: block;
+    height: 1rem;
+}
+
+.form-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: .5rem;
+    position: relative;
+}
+.form-action .line {
+    width: 100%;
+    height: 1px;
+    background-color: var(--light-grey);
+}
+.form-action button {
+    border-radius: 999px;
+    width: 82px;
+    height: 75px;
+    border: none;
+    background-color: var(--purple);
+    color: var(--white);
+    font: var(--label-font);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form-action button:hover {
+    background-color: var(--off-black);
+}
+
+.form-action button:focus {
+    outline: none;
+}
+
+@media screen and (max-width: 675px) {
+    :root {
+        --input-font: 700 2rem "Poppins", sans-serif;
+        --label-font: 700 1rem "Poppins", sans-serif;
+        --result-font: italic 800 3rem "Poppins", sans-serif;
+    }
+    .form-action {
+        margin: 2rem 0;
+    }
+    .form-action > .line {
+        position: absolute;
+    }
+    .form-action > button {
+        z-index: 1;
+        width: 75px;
+        height: 75px;
+    }
+}
+
+
+@media screen and (max-width: 375px) {
+    :root {
+        --input-font: 700 1.5rem "Poppins", sans-serif;
+        --label-font: 700 0.8rem "Poppins", sans-serif;
+        --result-font: italic 800 2rem "Poppins", sans-serif;
+    }
+    .form-action {
+        margin: 1rem 0;
+    }
+    .form-action > .line {
+        position: absolute;
+    }
+    .form-action > button {
+        z-index: 1;
+        width: 60px;
+        height: 60px;
+    }
+}
+
+.output > .result {
+    display: block;
+    font: var(--result-font);
+    color: var(--off-black);
+}
+
+.output > .result > span:first-child {
+    color: var(--purple);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem 0;
+    color: var(--smokey-grey);
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}

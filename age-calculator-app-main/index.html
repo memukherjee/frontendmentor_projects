@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/images/favicon-32x32.png"
+        />
+
+        <title>Frontend Mentor | Age calculator app</title>
+        <link rel="stylesheet" href="reset-styles.css" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <main class="container">
+            <form>
+                <div class="form-inputs">
+                    <div class="form-input">
+                        <label for="day" class="day-label">Day</label>
+                        <input type="text" id="day" name="day" />
+                        <span class="day-error"></span>
+                    </div>
+                    <div class="form-input">
+                        <label for="month" class="month-label">Month</label>
+                        <input type="text" id="month" name="month" />
+                        <span class="month-error"></span>
+                    </div>
+                    <div class="form-input">
+                        <label for="year" class="year-label">Year</label>
+                        <input type="text" id="year" name="year" />
+                        <span class="year-error"></span>
+                    </div>
+                </div>
+                <div class="form-action">
+                    <span class="line"></span>
+                    <button type="submit">
+                        <img
+                            src="./assets/images/icon-arrow.svg"
+                            alt="arrow icon"
+                        />
+                    </button>
+                </div>
+            </form>
+            <div class="output">
+                <span class="result result-year">
+                    <span class="year-num">- -</span>
+                    <span class="year-unit"> years</span>
+                </span>
+                <span class="result result-month">
+                    <span class="month-num">- -</span>
+                    <span class="month-unit"> months</span>
+                </span>
+                <span class="result result-day">
+                    <span class="day-num">- -</span>
+                    <span class="day-unit"> days</span>
+                </span>
+            </div>
+        </main>
+
+        <footer class="attribution">
+            Challenge by
+            <a
+                href="https://www.frontendmentor.io?ref=challenge"
+                target="_blank"
+                >Frontend Mentor</a
+            >. Coded by
+            <a href="https://memukherjee.netlify.app/">Akash Mukherjee</a>.
+        </footer>
+    </body>
+</html>
