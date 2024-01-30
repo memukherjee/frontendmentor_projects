@@ -1,5 +1,6 @@
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import markerIcon from "./images/icon-location.svg";
 
 const ipForm = document.querySelector(".input-box");
 const result = {
@@ -60,7 +61,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(mapView);
 
 const icon = L.icon({
-    iconUrl: "images/icon-location.svg",
+    iconUrl: markerIcon,
     iconSize: [46, 56],
     iconAnchor: [23, 56],
 });
