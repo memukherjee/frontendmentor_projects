@@ -16,25 +16,30 @@ octokit
         data = data.filter((item) => item.type === "dir");
         data.forEach((project) => {
             const listItem = document.createElement("li");
-            const link = document.createElement("a");
-            const image = document.createElement("img");
-            image.src = `${BASE_URL}/${project.name}/screenshot.png`;
-
-            fetch(`${BASE_URL}/${project.name}/README.md`)
+            fetch(project.url)
+            .then((res) => res.json())
+            .then((data) => {
+                const image = document.createElement("img");
+                image.src = data.find((item) => item.name === "screenshot.png").download_url;
+                const link = document.createElement("a");
+                link.target = "_blank";
+                const readme_url = data.find((item) => item.name === "README.md").download_url;
+                fetch(readme_url)
                 .then((res) => res.text())
                 .then((text) => {
                     const lines = text.split("\n");
                     const urlLine = lines.find((line) =>
-                        line.includes("- Live Site URL:")
+                    line.includes("- Live Site URL:")
                     );
                     const urlText = urlLine
-                        .split("[LIVE]")[1]
+                    .split("[LIVE]")[1]
                     const url = urlText.slice(1, urlText.length-1)
                     link.href = url;
                 });
-            link.appendChild(image);
-            link.appendChild(document.createTextNode(project.name));
-            listItem.appendChild(link);
-            projectList.appendChild(listItem);
+                link.appendChild(image);
+                link.appendChild(document.createTextNode(project.name));
+                listItem.appendChild(link);
+                projectList.appendChild(listItem);
+            });
         });
     });
