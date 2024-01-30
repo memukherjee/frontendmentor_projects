@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+
+        <title>Frontend Mentor | IP Address Tracker</title>
+
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body class="font-rubik text-center relative">
+        <header
+            class="bg-pattern-bg-mobile xl:bg-pattern-bg-desktop h-[40vh] bg-cover bg-center relative py-8 px-4 z-10"
+        >
+            <h1 class="title font-medium text-white text-3xl">
+                IP Address Tracker
+            </h1>
+            <form
+                class="input-box flex justify-center items-stretch mt-8 max-w-xl mx-auto"
+            >
+                <input
+                    placeholder="Search for any IP address or domain"
+                    class="p-4 rounded-l-xl grow outline-none font-normal text-lg"
+                    type="search"
+                    name="ip"
+                    id=""
+                />
+                <button type="submit" class="bg-black px-6 rounded-r-xl">
+                    <img src="./images/icon-arrow.svg" alt="Search" />
+                </button>
+            </form>
+            <div
+                class="result flex flex-col gap-y-4 items-center xl:items-stretch xl:flex-row xl:justify-between w-full-leaving-space max-w-6xl mx-auto bg-white p-4 xl:p-8 xl:text-left xl:min-h-36 rounded-xl shadow-xl absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2"
+            >
+                <div class="ip-address basis-full">
+                    <label
+                        class="text-dark-gray uppercase font-bold text-xs tracking-widest block"
+                        for="ip-address"
+                    >
+                        IP Address
+                    </label>
+                    <span
+                        id="ip-address"
+                        class="text-2xl xl:text-3xl font-medium text-very-dark-gray"
+                        ></span
+                    >
+                </div>
+                <div class="location basis-full">
+                    <label
+                        class="text-dark-gray uppercase font-bold text-xs tracking-widest block"
+                        for="location"
+                    >
+                        Location
+                    </label>
+                    <span
+                        id="location"
+                        class="text-2xl xl:text-3xl font-medium text-very-dark-gray"
+                        ></span
+                    >
+                </div>
+                <div class="timezone basis-full">
+                    <label
+                        class="text-dark-gray uppercase font-bold text-xs tracking-widest block"
+                        for="timezone"
+                        >Timezone</label
+                    >
+                    <span
+                        id="timezone"
+                        class="text-2xl xl:text-3xl font-medium text-very-dark-gray"
+                        ></span
+                    >
+                </div>
+                <div class="isp basis-full">
+                    <label
+                        class="text-dark-gray uppercase font-bold text-xs tracking-widest block"
+                        for="isp"
+                        >ISP</label
+                    >
+                    <span
+                        id="isp"
+                        class="text-2xl xl:text-3xl font-medium text-very-dark-gray"
+                        ></span
+                    >
+                </div>
+            </div>
+        </header>
+        <main class="map-container h-[60vh] bg-very-dark-gray z-0"></main>
+        <footer class="attribution">
+            Challenge by
+            <a
+                href="https://www.frontendmentor.io?ref=challenge"
+                target="_blank"
+                >Frontend Mentor</a
+            >. Coded by
+            <a href="https://memukherjee.netlify.app/">Akash Mukherjee</a>.
+        </footer>
+        <script type="module" src="script.js"></script>
+    </body>
+</html>
