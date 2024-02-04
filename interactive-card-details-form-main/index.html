@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+
+        <title>Frontend Mentor | Interactive card details form</title>
+
+        <link rel="stylesheet" href="reset-styles.css" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <aside>
+            <div class="cards">
+                <div class="card card-front">
+                    <img src="images/bg-card-front.png" alt="card-front" />
+                    <div class="card-front-content">
+                        <div class="card-logo">
+                            <img src="images/card-logo.svg" alt="card-logo" />
+                        </div>
+                        <div class="card-number">
+                            <div class="card-num-group">
+                                <span class="card-digit"> 0 </span>
+                                <span class="card-digit"> 0 </span>
+                                <span class="card-digit"> 0 </span>
+                                <span class="card-digit"> 0 </span>
+                            </div>
+                            <div class="card-num-group">
+                                <span class="card-digit"> 0 </span>
+                                <span class="card-digit"> 0 </span>
+                                <span class="card-digit"> 0 </span>
+                                <span class="card-digit"> 0 </span>
+                            </div>
+                            <div class="card-num-group">
+                                <span class="card-digit"> 0 </span>
+                                <span class="card-digit"> 0 </span>
+                                <span class="card-digit"> 0 </span>
+                                <span class="card-digit"> 0 </span>
+                            </div>
+                            <div class="card-num-group">
+                                <span class="card-digit"> 0 </span>
+                                <span class="card-digit"> 0 </span>
+                                <span class="card-digit"> 0 </span>
+                                <span class="card-digit"> 0 </span>
+                            </div>
+                        </div>
+                        <div class="card-holder">
+                            <span class="card-holder-name">Jane Appleseed</span>
+                        </div>
+                        <div class="card-expiry">
+                            <span class="card-expiry-date">
+                                <span class="card-expiry-month">00</span>
+                                <span>/</span>
+                                <span class="card-expiry-year">00</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-back">
+                    <img src="images/bg-card-back.png" alt="card-back" />
+                    <div class="card-back-content">
+                        <div class="card-cvc">
+                            <span class="card-cvc-digit">0</span>
+                            <span class="card-cvc-digit">0</span>
+                            <span class="card-cvc-digit">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <main>
+            <form action="">
+                <div class="form-group">
+                    <label for="card-holder-name">Cardholder Name</label>
+                    <input
+                        type="text"
+                        placeholder="e.g. Jane Appleseed"
+                        id="card-holder-name"
+                        name="name"
+                        class="card-holder-name-input"
+                    />
+                    <span id="card-holder-name-error" class="error-message"></span>
+                </div>
+                <div class="form-group">
+                    <label for="card-number">Card Number</label>
+                    <input
+                        type="text"
+                        placeholder="e.g. 1234 5678 9123 0000"
+                        id="card-number"
+                        name="card-number"
+                        class="card-number-input"
+                    />
+                    <span id="card-number-error" class="error-message"></span>
+                </div>
+                <div class="form-group card-expiry-date-group">
+                    <label for="card-expiry-date">Exp. Date (MM/YY)</label>
+                    <div id="card-expiry-date">
+                        <input
+                            type="text"
+                            placeholder="MM"
+                            id="card-expiry-month"
+                            name="card-expiry-month"
+                            class="card-expiry-month-input"
+                        />
+                        <input
+                            type="text"
+                            placeholder="YY"
+                            id="card-expiry-year"
+                            name="card-expiry-year"
+                            class="card-expiry-year-input"
+                        />
+                    </div>
+                    <span id="card-expiry-date-error" class="error-message"></span>
+                </div>
+                <div class="form-group card-cvc-group">
+                    <label for="card-cvc">CVC</label>
+                    <input
+                        type="text"
+                        placeholder="e.g. 123"
+                        id="card-cvc"
+                        class="card-cvc-input"
+                    />
+                    <span id="card-cvc-error" class="error-message"></span>
+                </div>
+                <button type="submit" class="submit-button">Confirm</button>
+            </form>
+            <div class="submitted-state-container">
+                <img src="images/icon-complete.svg" alt="form submitted" />
+                <h2>Thank you!</h2>
+                <p>We've added your card details.</p>
+                <button id="continue" class="submit-button">Continue</button>
+            </div>
+        </main>
+
+        <footer class="attribution">
+            Challenge by
+            <a
+                href="https://www.frontendmentor.io?ref=challenge"
+                target="_blank"
+                >Frontend Mentor</a
+            >. Coded by
+            <a href="https://memukherjee.netlify.app/">Akash Mukherjee</a>.
+        </footer>
+    </body>
+</html>

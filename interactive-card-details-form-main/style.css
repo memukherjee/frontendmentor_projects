@@ -1,0 +1,353 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+:root {
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 500;
+    --primary-gradient: linear-gradient(
+        90deg,
+        hsl(249, 99%, 64%),
+        hsl(278, 94%, 30%)
+    );
+    --error: hsl(0, 100%, 66%);
+    --white: hsl(0, 0%, 100%);
+    --light-grayish-violet: hsl(270, 3%, 87%);
+    --dark-grayish-violet: hsl(279, 6%, 55%);
+    --very-dark-violet: hsl(278, 68%, 11%);
+    --card-padding: 2rem;
+    --card-content-size: 1;
+    --form-content-size: 1;
+}
+
+body {
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    justify-content: space-between;
+}
+
+aside {
+    flex-grow: 1;
+    height: 100%;
+    max-width: 500px;
+    background-image: url("images/bg-main-desktop.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.cards {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.cards > .card {
+    position: absolute;
+}
+
+.cards > .card-front {
+    top: 15%;
+    right: -25%;
+}
+
+.cards > .card-back {
+    bottom: 15%;
+    right: -45%;
+}
+
+.card > img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.cards > .card > .card-front-content,
+.cards > .card > .card-back-content {
+    position: absolute;
+    inset: 0;
+}
+
+.cards > .card .card-logo {
+    position: absolute;
+    top: var(--card-padding);
+    left: var(--card-padding);
+    width: calc(100px * var(--card-content-size));
+}
+
+.cards > .card .card-logo > img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+.cards > .card .card-number {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    top: 60%;
+    left: var(--card-padding);
+    font-size: calc(1.5rem * var(--card-content-size));
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.cards > .card .card-holder {
+    position: absolute;
+    bottom: var(--card-padding);
+    left: var(--card-padding);
+    font-size: calc(1rem * var(--card-content-size));
+    color: var(--white);
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+}
+
+.cards > .card .card-expiry {
+    position: absolute;
+    bottom: var(--card-padding);
+    right: var(--card-padding);
+}
+
+.cards > .card .card-expiry-date {
+    font-size: calc(1rem * var(--card-content-size));
+    color: var(--white);
+    letter-spacing: 0.15rem;
+    display: flex;
+    gap: 0.15rem;
+}
+
+.cards > .card .card-cvc {
+    position: absolute;
+    bottom: 48%;
+    right: 14%;
+    font-size: calc(1rem * var(--card-content-size));
+    color: var(--white);
+}
+
+main {
+    flex-grow: 0.4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 15%;
+}
+
+form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem 0;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: calc(0.75rem * var(--form-content-size));
+    color: var(--very-dark-violet);
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    white-space: nowrap;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--light-grayish-violet);
+    border-radius: 5px;
+    font-size: calc(1rem * var(--form-content-size));
+    color: var(--very-dark-violet);
+    background-color: var(--white);
+}
+
+.form-group input:focus {
+    outline: none;
+    background-image: linear-gradient(white, white), var(--primary-gradient);
+    border-color: transparent;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.form-group input.error {
+    border-color: var(--error);
+    color: var(--error);
+}
+
+.form-group > .error-message {
+    color: var(--error);
+    font-size: calc(0.75rem * var(--form-content-size));
+    letter-spacing: 0.05rem;
+    height: 1rem;
+    display: block;
+    margin-top: 0.25rem;
+    white-space: nowrap;
+}
+
+.form-group.card-expiry-date-group,
+.form-group.card-cvc-group {
+    width: calc(50% - 3px);
+    display: inline-block;
+}
+
+.form-group.card-expiry-date-group {
+    padding-right: 0.75rem;
+}
+
+.form-group.card-expiry-date-group > #card-expiry-date {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: calc(1.05rem * var(--form-content-size));
+    letter-spacing: 0.15rem;
+    color: var(--white);
+    background: var(--very-dark-violet);
+    cursor: pointer;
+}
+
+.submitted-state-container {
+    display: none;
+    width: 100%;
+    max-width: 400px;
+}
+
+main.submitted {
+    padding-left: 0;
+}
+
+main.submitted > .submitted-state-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.submitted-state-container > img {
+    width: 75px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.submitted-state-container > h2 {
+    font-size: calc(1.5rem * var(--form-content-size));
+    color: var(--very-dark-violet);
+}
+
+.submitted-state-container > p {
+    font-size: calc(1rem * var(--form-content-size));
+    color: var(--dark-grayish-violet);
+    margin-bottom: 2rem;
+}
+
+main.submitted > form {
+    display: none;
+}
+
+.attribution {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem 0;
+    font-size: 0.75rem;
+    color: var(--dark-grayish-violet);
+    text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 1024px) {
+    :root {
+        --card-content-size: 0.72;
+        --form-content-size: 1;
+        --card-padding: 1.25rem;
+    }
+    body {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        max-width: 100%;
+    }
+    aside {
+        width: 100%;
+        max-width: 100%;
+        max-height: 40%;
+    }
+    main {
+        padding: 5rem 1rem 0;
+    }
+    .cards {
+        position: relative;
+        width: 100%;
+        max-width: 700px;
+        margin: auto;
+    }
+    .cards > .card {
+        width: 60%;
+    }
+    .cards > .card-front {
+        top: 2.5rem;
+        right: unset;
+        left: 1rem;
+        z-index: 1;
+    }
+    .cards > .card-back {
+        bottom: unset;
+        top: 1rem;
+        right: 1rem;
+    }
+    .attribution{
+        position: static;
+    }
+}
+
+@media screen and (max-width: 512px) {
+    :root {
+        --card-content-size: 0.5;
+        --form-content-size: .95;
+        --card-padding: 1rem;
+    }
+    aside {
+        width: 100%;
+        max-width: 100%;
+        max-height: 33%;
+    }
+    .cards > .card {
+        width: 72%;
+    }
+    .cards > .card-front {
+        top: unset;
+        right: unset;
+        bottom: -2.5rem;
+        left: 1.25rem;
+        z-index: 1;
+    }
+    .cards > .card-back {
+        bottom: unset;
+        top: 2rem;
+        right: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    :root {
+        --card-content-size: 0.4;
+        --form-content-size: 0.8;
+        --card-padding: 1rem;
+    }
+
+}
